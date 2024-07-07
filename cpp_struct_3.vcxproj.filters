@@ -4,10 +4,36 @@
     <Filter Include="main">
       <UniqueIdentifier>{540e5566-5343-4290-8346-d37380c7d968}</UniqueIdentifier>
     </Filter>
+    <Filter Include="lib">
+      <UniqueIdentifier>{0a420966-a6ab-49bd-9c88-5756486ab3a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="disk">
+      <UniqueIdentifier>{759ad4c5-9288-4fca-af5c-4a1357a0a833}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="user">
+      <UniqueIdentifier>{61540e0b-60fc-48f9-8c8d-cd31ce6e2ccc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>main</Filter>
     </ClCompile>
+    <ClCompile Include="disk.cpp">
+      <Filter>disk</Filter>
+    </ClCompile>
+    <ClCompile Include="user.cpp">
+      <Filter>user</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="lib.h">
+      <Filter>lib</Filter>
+    </ClInclude>
+    <ClInclude Include="disk.h">
+      <Filter>disk</Filter>
+    </ClInclude>
+    <ClInclude Include="user.h">
+      <Filter>user</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
