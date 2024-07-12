@@ -14,11 +14,9 @@ private:
 public:
 	Disk();
 
-	Disk(string name, string director, string ganre, int rating, double price) :Disk() {};
+	Disk(string name, string director, string ganre, int rating, double price);
 
 	~Disk();
-
-	static int get_object_count();
 
 
 	void print_all();
@@ -34,7 +32,7 @@ public:
 
 	int get_rating();
 
-	int get_price();
+	double get_price();
 
 	static int get_object_count()
 	{
@@ -59,7 +57,7 @@ public:
 
 	
 
-	static int set_object_count(int count)
+	static void set_object_count(int count)
 	{
 		object_count = count;
 	}

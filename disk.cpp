@@ -4,10 +4,11 @@ Disk::Disk() {
 	_name = "Abc";
 	_director = "A.B.";
 	_ganre = "comedy";
-	_rating = 1;;
-	_price = 1;
+	_rating = 1;
+	_price = 10;
 	object_count++;
 }
+
 Disk::Disk(string name, string director, string ganre, int rating, double price): Disk::Disk() {
 	set_name(name);
 	set_director( director);
@@ -17,9 +18,9 @@ Disk::Disk(string name, string director, string ganre, int rating, double price)
 			
 }
 
-	Disk::~Disk() {
+Disk::~Disk() {
 		object_count--;
-	}
+}
 
 	void Disk::print_all() {
 		cout << "Name: "<<_name << endl;
@@ -44,7 +45,7 @@ Disk::Disk(string name, string director, string ganre, int rating, double price)
 	int Disk::get_rating() {
 		return _rating;
 	}
-	int Disk::get_price() {
+	double Disk::get_price() {
 		return _price;
 	}
 
