@@ -80,4 +80,5 @@ Disk::~Disk() {
 	}
 
 
-
+	int Disk::object_count = 0;
+	int Disk::_max_count = 7;

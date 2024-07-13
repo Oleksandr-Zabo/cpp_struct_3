@@ -16,6 +16,9 @@ enum UserAction
 	
 };
 
+//using getline(cin, str)- to get string with spaces
+//using cin.ignore();- to clear bufer
+
 int main()
 {
 
@@ -36,7 +39,7 @@ int main()
 
 	//show start user disks
 	cout << "Welcome to the online disk store!" << endl;
-	cout << "Here are the discs to choose from" << endl;
+	cout << "Here are the discs to choose from: \n" << endl;
 	user->print_items();
 	system("pause");
 
@@ -58,9 +61,10 @@ int main()
 			cout << "6 - Find Film With Name" << endl;
 			cout << "7 - Find Film With Ganre" << endl;
 			cout << "8 - Find Film With Director" << endl;
+			cout << "9 - The most popular film in the genre" << endl << endl;
 
+			cout << "Enter your value: ";
 			cin >> action;
-			cin.ignore();
 
 		} while (action < 0 || action > 9);
 
@@ -79,25 +83,25 @@ int main()
 			int index;
 			do
 			{
-				cout << "Enter index of disk to add: ";
+				cout << "Enter index of disk to add (from 0): ";
 				cin >> index;
 			} while (index < 0 || index > user->get_size());
 
 			Disk disk;
 			string name;
-			cout << "Enter disk/film director: ";
-			cin >> name;
+			cin.ignore();
+			cout << "Enter disk/film name: ";
+			getline(cin, name);
 			disk.set_name(name);
-
 
 			string director;
 			cout << "Enter film director: ";
-			cin >> director;
+			getline(cin, director);
 			disk.set_director(director);
 
 			string ganre;
-			cout << "Enter film director: ";
-			cin >> ganre;
+			cout << "Enter film ganre: ";
+			getline(cin, ganre);
 			disk.set_director(ganre);
 
 			int rating;
@@ -129,9 +133,9 @@ int main()
 			int index;
 			do
 			{
-				cout << "Enter index of disk to remove: ";
+				cout << "Enter index of disk to remove (from 0): ";
 				cin >> index;
-			} while (index < 0 || index < user->get_size());
+			} while (index < 0 || index > user->get_size());
 			user->remove_by_index(index);
 			system("pause");
 
@@ -148,28 +152,27 @@ int main()
 			
 			do
 			{
-				cout << "Enter index of disk to update: ";
+				cout << "Enter index of disk to update (from 0): ";
 				cin >> index;
-			} while (index < 0 || index < user->get_size());
-			
+			} while (index < 0 || index > user->get_size());
 			user->remove_by_index(index);
 
 			Disk disk;
 			string name;
-			cout << "Enter disk/film director: ";
-			cin >> name;
+			cin.ignore();
+			cout << "Enter disk/film name: ";
+			getline(cin, name);
 			disk.set_name(name);
-
 
 			string director;
 			cout << "Enter film director: ";
-			cin >> director;
+			getline(cin, director);
 			disk.set_director(director);
 
 			string ganre;
-			cout << "Enter film director: ";
-			cin >> ganre;
-			disk.set_director(ganre);
+			cout << "Enter film ganre: ";
+			getline(cin, ganre);
+			disk.set_ganre(ganre);
 
 			int rating;
 			cout << "Enter film rating: ";
@@ -206,8 +209,9 @@ int main()
 		case findName:
 		{
 			string name;
+			cin.ignore();
 			cout << "Enter name: ";
-			cin >> name;
+			getline(cin, name);
 			user->find_name(name);
 			system("pause");
 		}break;
@@ -216,7 +220,8 @@ int main()
 		{
 			string ganre;
 			cout << "Enter ganre: ";
-			cin >> ganre;
+			cin.ignore();
+			getline(cin, ganre);
 			user->find_ganre(ganre);
 			system("pause");
 		}break;
@@ -224,8 +229,9 @@ int main()
 		case findDirector:
 		{
 			string director;
+			cin.ignore();
 			cout << "Enter director: ";
-			cin >> director;
+			getline(cin, director);
 			user->find_director(director);
 			system("pause");
 		}break;
@@ -233,8 +239,9 @@ int main()
 		case maxRatingInGanre:
 		{
 			string ganre;
+			cin.ignore();
 			cout << "Enter ganre: ";
-			cin >> ganre;
+			getline(cin, ganre);
 			user->max_film_ganre(ganre);
 			system("pause");
 		}break;

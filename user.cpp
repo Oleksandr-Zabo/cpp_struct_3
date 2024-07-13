@@ -54,7 +54,7 @@ double User::get_total_price() {
 	double total_price = 0;
 	for (int i = 0; i < size; i++)
 	{
-		total_price = disks[i].get_price();
+		total_price += disks[i].get_price();
 	}
 	return total_price;
 }
